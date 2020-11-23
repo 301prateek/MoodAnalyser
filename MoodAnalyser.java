@@ -32,15 +32,19 @@ public class MoodAnalyser {
 		this.message = message;
 	}
 
-
-	public String analyseMood() {
-
-		if(message.contains("I Am In Sad Mood")) {
+	//Exception handeling
+	public String analyseMood(String mood) {
+		try {
+			if(mood.contains("I Am In Sad Mood")) {
 
 				return "Sad";
 			}
 			else {
 				return "Happy";
 			}
+		}
+		catch(NullPointerException e) {
+			return "Happy";
+		}
 	}
 }
